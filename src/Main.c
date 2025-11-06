@@ -143,7 +143,7 @@ void SSpline_Render(SSpline* r){
     Vec2 p3 = TransformedView_WorldScreenPos(&tv,r->p3);
     Vec2 l = TransformedView_WorldScreenLength(&tv,(Vec2){ 20.0f,20.0f });
 	
-    BCurve_Render((BCurve){ p1,p2,p3 },RED);
+    BCurve_Render(WINDOW_STD_ARGS,(BCurve){ p1,p2,p3 },RED);
     RenderRect(p1.x-l.x*0.5f,p1.y-l.y*0.5f,l.x,l.y,GREEN);
     RenderRect(p2.x-l.x*0.5f,p2.y-l.y*0.5f,l.x,l.y,GREEN);
     RenderRect(p3.x-l.x*0.5f,p3.y-l.y*0.5f,l.x,l.y,GREEN);
