@@ -151,10 +151,11 @@ void SSpline_Render(SSpline* r){
 
 
 void Setup(AlxWindow* w){
-    tv = TransformedView_New((Vec2){ 1.8f,1.8f });
-    TransformedView_Offset(&tv,(Vec2){ -100.0f,20.0f });
+    tv = TransformedView_New((Vec2){ GetWidth(),GetHeight() });
+    TransformedView_Offset(&tv,(Vec2){ -100.0f,100.0f });
+    TransformedView_Zoom(&tv,(Vec2){ 0.001f,0.001f });
 
-	//TransformedView_Focus(&tv,&Me.p);
+	//TransformedView_Focus(&tv,&Me.p,Me.d);
     Objects = Vector_New(sizeof(Shape));
 
     //Vector_Push(&Objects,(Shape[]){ Shape_New(SHAPE_RECT,(Rect[]){ {100.0f,100.0f},{200.0f,200.0f} },sizeof(Rect),(void(*)(void*))SRect_Update,(void(*)(void*))SRect_Render) });
